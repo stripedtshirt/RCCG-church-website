@@ -3,21 +3,23 @@
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 html {
     box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Lexend', sans-serif;
     width: 100%;
 }
 
 .body {
-    background-color: #8141417e;
+    background-color: #7b488f;
     background-image: url(images/dancing-concert-while-singer-is-performing-surrounded-with-lights.jpg);
+    background-blend-mode: hard-light;
     background-size: cover;
-    padding-bottom: 110vh;
-    /* z-index: -1; */
+    padding-bottom: 40vh;
 }
 
 .header-container {
@@ -41,8 +43,9 @@ body {
 
 .main-text {
     text-align: left;
-    color: white;
-    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.295));
+    color: rgb(219, 123, 123);
+    mix-blend-mode: color-burn;
+    /* filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.295)); */
     padding-top: 6rem;
     padding-left: 2rem;
     font-size: 2rem;
@@ -66,13 +69,144 @@ body {
     margin: 0 2em;
 }
 
-.nav-bar ul li:hover {
+.nav-bar ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.nav-bar-link:hover {
     cursor: pointer;
-    font-size: larger;
+    font-style: italic;
 }
 
 
 .dropdown {
     position: relative;
     display: none;
+}
+
+.notification_bar {
+    height: 70vh;
+    width: 100%;    
+    background-color: #ffffff7e;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: #1b1b1b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+.footer_logo {
+    width: 8rem;
+    margin-bottom: 1rem;
+    filter: opacity(0.7);
+    filter: grayscale(100%);
+}
+
+.footer1 {
+    color: white;
+    text-align: center;
+    line-height: 1.5rem;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.footer2 {
+    color: white;
+    text-align: center;
+    width: 80%;
+}
+
+/* styles for smaller screens */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 1em 0;
+    }
+    .logo, .account-icon {
+        margin: 0.5em 0;
+    }
+    .nav-bar ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    .nav-bar ul li {
+        margin: 0.5em 0;
+    }
+    .main-text {
+        padding-top: 3rem;
+        padding-left: 1rem;
+        font-size: 1.2rem;
+    }
+    .main-text h1 {
+        font-size: 3rem;
+    }
+    .footer1, .footer2 {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+    .footer_logo {
+        width: 5rem;
+    }
+    .notification_bar {
+        height: 30vh;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .body {
+        width: 100%;
+    }
+
+    .header-container {
+        flex-direction: row;
+        height: auto;
+        padding: 1em 0;
+        min-width: 100%;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .logo , .account-icon {
+        margin: 0.5em 1rem;
+    }
+
+    .main-text h1 {
+        max-width: 4.5rem;
+    }
+
+    .main-text h2 {
+        font-size: 2.5rem;
+        padding-bottom: 2rem;
+    }
+    .main-text {
+        max-width: 4rem;
+        padding-top: 7rem;
+        padding-left: 0.5rem;
+    }
+    .nav-img {
+        width: 1.5em;
+    }
+    .footer_logo {
+        width: 3rem;
+    }
 }
