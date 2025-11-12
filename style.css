@@ -16,6 +16,7 @@ body {
 }
 
 .body {
+    min-height: 100vh;
     background-color: #7b488f;
     background-image: url(images/dancing-concert-while-singer-is-performing-surrounded-with-lights.jpg);
     background-blend-mode: hard-light;
@@ -23,19 +24,73 @@ body {
     padding-bottom: 40vh;
 }
 
-.header-container {
-    position: fixed;
-    width: 100%;
-    height: 10vh;
+nav {
     background-color: #ffffff7e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+nav a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+nav li:first-child  {
+    margin-right: auto;
+}
+
+nav li:nth-last-child(2)  {
+    margin-left: auto;
 }
 
 .nav-img {
     width: 2em;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.438);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+
+}
+
+.sidebar li {
+    width: 100%;
+}
+
+.sidebar a {
+    width: 100%;
 }
 
 .logo, .account-icon {
@@ -46,13 +101,10 @@ body {
     text-align: left;
     color: rgb(219, 123, 123);
     mix-blend-mode: color-burn;
-    /* filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.295)); */
     padding-top: 6rem;
     padding-left: 2rem;
     font-size: 2vw;
     font-weight: bolder;
-    /* width: 10rem; */
-    /* min-width: 2rem; */
 }
 
 .main-text h1 {
@@ -61,92 +113,6 @@ body {
     margin-top: -30px;
 }
 
-.nav-bar ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-.nav-bar ul li {
-    margin: 0 2em;
-}
-
-.nav-bar ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-}
-
-.nav-bar-link:hover {
-    cursor: pointer;
-    font-style: italic;
-}
-
-
-.dropdown {
-    position: relative;
-    display: none;
-}
-
-/* .notification_bar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;     
-    height: 1000px;
-    position: relative;
-    overflow: hidden;
-    background-color: #ffffff7e; 
-}
-
-.images {
-    display: flex;
-    width: 100%;
-}
-
-.images img {
-    height: 400px;
-    width: 100%;
-    transition: all 0.15s ease;
-}
-
-.images input {
-    display: none;
-}
-
-.dots {
-    display: flex;
-    justify-content: center;
-    margin: 5px;
-}
-
-.dots label {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: solid #fff 2px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 5px;
-}
-
-.dots label:hover {
-    background-color: #000000;
-}
-
-#img-1:checked ~ .img1 {
-    margin-left: 0;
-}
-
-#img-2:checked ~ .img2 {
-    margin-left: -100%;
-}
-
-#img-3:checked ~ .img3 {
-    margin-left: -200%;
-}
- */
 
  .notification_body {
     display: flex;
@@ -156,34 +122,40 @@ body {
     width: 100%;
  }
 
- .notification_bar {
-    position : relative;
+ .carousel {
     width: 100%;
-    overflow: hidden;
- }
-
- .images {
     display: flex;
-    width: 100%;
+    overflow-x: auto;
+ }  
+
+ .carousel::-webkit-scrollbar {
+    display: none;
  }
 
- .images img {
+ .group {
+    display: flex;
+    animation: slide 15s infinite linear;
+ }
+
+ .img {
+    flex: 0 0 5em;
     height: auto;
-    min-width: 100%;
-    max-width: 100%;
-    transition: all 0.15s ease;
-}
+    width: 100%;
 
-.images input {
-    display: none;
-}
+ }
 
-.dots {
+ @keyframes slide {
+    from {translate: 0;}
+    to {translate: -100%;}
+ }
+
+
+/* .dots {
     display: flex;
     justify-content: center;
-}
+} */
 
-.dots label {
+/* .dots label {
     height: 20px;
     width: 20px;
     border-radius: 50%;
@@ -195,9 +167,9 @@ body {
 
 .dots label:hover {
     background-color: #000000;
-}
+} */
 
-#img1:checked ~ .img1 {
+/* #img1:checked ~ .img1 {
     margin-left: 0;
 }
 
@@ -207,7 +179,7 @@ body {
 
 #img3:checked ~ .img3 {
     margin-left: -200%;
-}
+} */
 
 .footer {
     bottom: 0;
@@ -249,28 +221,37 @@ body {
     width: 80%;
 }
 
+#hamburger {
+    display: none;
+}
+
 /* styles for smaller screens */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        height: auto;
-        padding: 1em 0;
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
     }
-    .logo, .account-icon {
-        margin: 0.5em 0;
+
+    .sidebar-head {
+        display: flex;
+        justify-content: space-between;
     }
-    .nav-bar ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-    }
-    .nav-bar ul li {
-        margin: 0.5em 0;
-    }
+
+    #hamburger {
+    display: block;
+}
+
+    .notification_body {
+    flex: 0 0 5em;
+    height: 2em;
+    max-width: 100%;
+
+ }
+
     .main-text {
         padding-top: 3rem;
         padding-left: 1rem;
-        font-size: 1.2vw;
+        font-size: 5.2vw;
+        padding-bottom: 1rem;
     }
     .main-text h1 {
         font-size: 13vw;
@@ -283,30 +264,17 @@ body {
     .footer_logo {
         width: 5rem;
     }
-    .notification_bar {
-        height: 30vh;
-    }
 }
 
 @media (max-width: 480px) {
 
     .body {
         width: 100%;
+        min-height: 70vh;
     }
 
-    .header-container {
-        flex-direction: row;
-        height: auto;
-        padding: 1em 0;
-        min-width: 100%;
-    }
-
-    .nav-bar {
-        display: none;
-    }
-
-    .logo , .account-icon {
-        margin: 0.5em 1rem;
+    .sidebar {
+        width: 100%;
     }
 
     .main-text h1 {
