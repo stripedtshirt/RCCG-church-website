@@ -165,6 +165,10 @@ nav li:nth-last-child(2)  {
     box-shadow: 0 4px 30px rgba(107, 16, 0, 0.726);
 }
 
+.notification {
+    display: block;
+}
+
  .notification_body {
     display: flex;
     justify-content: center;
@@ -191,13 +195,61 @@ nav li:nth-last-child(2)  {
  .img {
     flex: 0 0 5em;
     height: auto;
-    width: 100%;
+    width: 100vw;
 
  }
 
- @keyframes slide {
+ .slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+ }
+
+ .slider img {
+    width: 100%;
+    display: none;
+ }
+ 
+
+ img.displaySlide{
+    display:block;
+ }
+
+ .moveImg {
+    animation: slide 500ms ease-in;
+ }
+
+  @keyframes slide {
     from {translate: 0;}
-    to {translate: -100%;}
+    to {translate: -10%;}
+ }
+
+ .slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.644);
+    color: white;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    font-weight: bolder;
+ }
+
+ .slider button:hover {
+    background-color: black;
+    transition: 0.25s;
+ }
+
+ .prev{
+    left: 0.5rem;
+ }
+
+ .next {
+    right: 0.5rem;
  }
 
 
@@ -212,7 +264,6 @@ nav li:nth-last-child(2)  {
     justify-content: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     font-size: 0.9rem;
-    margin-top: 1vh;
     
 }
 
@@ -287,7 +338,7 @@ nav li:nth-last-child(2)  {
 
 
 .live-video-container {
-    height: 60vh;
+    height: 40em;
     flex-direction: column;
 }
 
@@ -301,9 +352,13 @@ nav li:nth-last-child(2)  {
 
     .notification_body {
     flex: 0 0 5em;
-    height: 2em;
     max-width: 100%;
 
+ }
+
+ .group {
+    display: flex;
+    animation: slide 10s infinite linear;
  }
 
  .map {
@@ -325,11 +380,12 @@ nav li:nth-last-child(2)  {
     .main-text h1 {
         font-size: 13vw;
     }
-    .footer1, .footer2 {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
+    
+    .footer {
+        height: 40vh;
+        padding-top: 1em;
     }
+
     .footer_logo {
         width: 5rem;
     }
@@ -361,6 +417,13 @@ nav li:nth-last-child(2)  {
     flex-direction: column;
 }
 
+.live-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
     .main-text h1 {
         max-width: 4.5vw;
     }
@@ -377,6 +440,12 @@ nav li:nth-last-child(2)  {
     .nav-img {
         width: 1.5em;
     }
+
+    .slider button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
     .footer_logo {
         width: 3rem;
     }
