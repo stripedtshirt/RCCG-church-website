@@ -18,7 +18,7 @@ body {
 .body {
     min-height: 100vh;
     /* background-color: #7b488f; */
-    background-image: url(images/dancing-concert-while-singer-is-performing-surrounded-with-lights.jpg);
+    /* background-image: url(images/dancing-concert-while-singer-is-performing-surrounded-with-lights.jpg); */
     background-blend-mode: hard-light;
     background-size: cover;
     /* padding-bottom: 40vh; */
@@ -113,6 +113,26 @@ nav li:nth-last-child(2)  {
     margin-top: -30px;
 }
 
+.greeting {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.greeting h1 {
+    font-size: 3em;
+    border-bottom: 1px solid rgb(155, 155, 155); /* Adjust thickness, style, and color */
+    padding-bottom: 30px;
+    max-width: 80%;
+}
+
+.greeting h3 {
+    margin-top: 3rem;
+    max-width: 80%;
+} 
+
 .map {
     position: absolute;
     bottom: 10px;
@@ -136,7 +156,7 @@ nav li:nth-last-child(2)  {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: rgb(255, 161, 73);
+    background-color: rgb(54, 54, 54);
 }
 
 .live-text {
@@ -162,7 +182,7 @@ nav li:nth-last-child(2)  {
     width: 60%;
     border-radius: 10px;
     margin: 1rem;
-    box-shadow: 0 4px 30px rgba(107, 16, 0, 0.726);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.514);
 }
 
 .notification {
@@ -250,6 +270,56 @@ nav li:nth-last-child(2)  {
 
  .next {
     right: 0.5rem;
+ }
+
+ .testimony {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ .testimony-container {
+    border: 10px #1b1b1b;
+ }
+
+ .testimony div a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+ }
+
+ .quick-menu {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #1b1b1b;
+    box-shadow: 0 20px 20px -20px black;
+ }
+
+ .menu-header {
+    font-size: 3rem;
+    margin-bottom: 2rem ;
+    color: #e0e0e0;
+ }
+
+ .menu-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+ }
+
+ .menu-icons div{
+    border-radius: 10px;
+    background-color: #e0e0e0;
+    color: rgb(29, 29, 29);
+    text-align: center;
+    padding: 8rem;
+    font-size: 2rem;
  }
 
 
@@ -424,6 +494,10 @@ nav li:nth-last-child(2)  {
     text-align: center;
 }
 
+.greeting h1 {
+    font-size: 2.5rem;
+}
+
     .main-text h1 {
         max-width: 4.5vw;
     }
@@ -440,6 +514,24 @@ nav li:nth-last-child(2)  {
     .nav-img {
         width: 1.5em;
     }
+
+     .menu-header {
+        font-size: 1rem;
+        margin: 1rem;
+     }
+
+    .menu-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    flex-direction: column;
+ }
+
+ .menu-icons div{
+    padding: 3rem;
+    font-size: 2rem;
+    margin: 0.5rem;
+ }
 
     .slider button {
         font-size: 1rem;
