@@ -273,20 +273,21 @@ nav li:nth-last-child(2)  {
  }
 
  .testimony {
-    height: 10vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(45deg, rgb(117, 205, 255), rgb(0, 95, 184));
  }
 
  .testimony-container {
-    border: 10px #1b1b1b;
+    border: 10px #ffffff;
  }
 
  .testimony div a {
     text-decoration: none;
-    color: black;
-    border: 1px solid rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
     padding: 10px;
  }
 
@@ -299,6 +300,7 @@ nav li:nth-last-child(2)  {
     width: 100%;
     background-color: #1b1b1b;
     box-shadow: 0 20px 20px -20px black;
+    padding: 2em;
  }
 
  .menu-header {
@@ -307,19 +309,91 @@ nav li:nth-last-child(2)  {
     color: #e0e0e0;
  }
 
- .menu-icons {
+ /* .menu-icons {
     display: flex;
     justify-content: space-around;
     width: 100%;
- }
+ } */
 
  .menu-icons div{
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #e0e0e0;
-    color: rgb(29, 29, 29);
-    text-align: center;
-    padding: 8rem;
+    padding: 10px;
+    border-radius: 5px;
+ }
+
+ .menu-icons {
+    display: grid;
+    gap: 1.5rem;
+    /* grid-template-areas: "1 2 3 4"; */
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+ }
+
+ .menu-icons:nth-child(1){
+    grid-area: 1;
+ }
+
+ .menu-icons:nth-child(2){
+    grid-area: 2;
+ }
+
+ .menu-icons:nth-child(3){
+    grid-area: 3;
+ }
+
+ .menu-icons:nth-child(4){
+    grid-area: 4;
+ }
+
+ .menu-icons div:hover{
+    cursor: pointer;
+ }
+
+ .menu-icons div svg, .menu-icons div img{
+    width: 11rem;
+    height: 11rem;
+    margin: 1rem;
+ }
+
+
+ .weekly-schedule {
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     font-size: 2rem;
+    gap: 2rem;
+    padding: 2rem;
+    background-image: linear-gradient(45deg, rgb(117, 205, 255), rgb(0, 95, 184));
+ }
+
+ .upper-section-weekly-schedule {
+    text-align: center;
+ }
+
+ .lower-section-weekly-schedule {
+    display: flex;
+    gap: 5rem;
+ }
+
+ .weekly-schedule-columns * {
+    margin: 0.5rem;
+    text-align: center;
+ }
+
+ .weekly-schedule-columns h5 {
+    margin-bottom: 2rem;
+ }
+
+ .weekly-schedule-columns p {
+    font-size: 1.5rem;
  }
 
 
@@ -459,6 +533,26 @@ nav li:nth-last-child(2)  {
     .footer_logo {
         width: 5rem;
     }
+
+    .menu-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    flex-direction: column;
+    font-size: 1rem;
+ }
+
+ .menu-icons div{
+    padding: 3rem;
+    font-size: 2rem;
+    margin: 0.5rem;
+ }
+
+  .lower-section-weekly-schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+ }
 }
 
 @media (max-width: 480px) {
@@ -519,19 +613,6 @@ nav li:nth-last-child(2)  {
         font-size: 1rem;
         margin: 1rem;
      }
-
-    .menu-icons {
-    display: flex;
-    justify-content: space-around;
-    width: 90%;
-    flex-direction: column;
- }
-
- .menu-icons div{
-    padding: 3rem;
-    font-size: 2rem;
-    margin: 0.5rem;
- }
 
     .slider button {
         font-size: 1rem;
