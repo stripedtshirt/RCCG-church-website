@@ -355,6 +355,11 @@ nav li:nth-last-child(2)  {
     cursor: pointer;
  }
 
+ .menu-icons a {
+    text-decoration: none;
+    color: black;
+ }
+
  .menu-icons div svg, .menu-icons div img{
     width: 11rem;
     height: 11rem;
@@ -434,6 +439,16 @@ nav li:nth-last-child(2)  {
     color: white;
     text-align: center;
     width: 80%;
+}
+
+.icons {
+    margin-bottom: 2rem;
+}
+
+.icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 1rem;
 }
 
 #hamburger {
@@ -622,4 +637,8 @@ nav li:nth-last-child(2)  {
     .footer_logo {
         width: 3rem;
     }
+
+    .icons a {
+    font-size: 1rem;
+}
 }
